@@ -8,52 +8,50 @@
     <title>Hotel Booking App</title>
 </head>
 <body>
-    <nav>
-        <header>
-            <ul>
-                <li>Hotels</li>
-                <li>Contact</li>
-                <li>About Us</li>
-            </ul>
-        </header>
-    </nav>
     <main>
+        <button onclick="test()">Press Alert</button>
         <h1>Choose the hotel</h1>
         <div class="cards">
             <div class="cards__item" id="firstHotel">
-                <img src="../src/hotel.jpeg" alt="First Hotel">
-                <h2>First Hotel</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, dolore.</p>
+                <img src="../src/firstHotel.jpeg"+ alt="First Hotel">
+                <h2>Mushroom</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, inventore?</p>
                 <div class="cards__overlay">
-                    <p class="cards__overlay__text">Book in</p>
+                    <p class="cards__overlay__text">Show more</p>
                 </div>
             </div>
             <div class="cards__item" id="secondHotel">
-                <img src="../src/hotel.jpeg" alt="Second Hotel">
-                <h2>Second Hotel</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, dolore.</p>
+                <img src="../src/secondHotel.jpeg" alt="Second Hotel">
+                <h2>Flower</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
                 <div class="cards__overlay">
-                    <p class="cards__overlay__text">Book in</p>
+                    <p class="cards__overlay__text">Show more</p>
                 </div>
             </div>
             <div class="cards__item" id="thirdHotel">
-                <img src="../src/hotel.jpeg" alt="Third Hotel">
-                <h2>Third Hotel</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, dolore.</p>
+                <img src="../src/thirdHotel.jpeg" alt="Third Hotel">
+                <h2>Sand</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, maiores.</p>
                 <div class="cards__overlay">
-                    <p class="cards__overlay__text">Book in</p>
+                    <p class="cards__overlay__text">Show more</p>
                 </div>
             </div>
             <div class="cards__item" id="fourthHotel">
-                <img src="../src/hotel.jpeg" alt="Fourth Hotel">
-                <h2>Fourth Hotel</h2>
+                <img src="../src/fourthHotel.jpeg" alt="Fourth Hotel">
+                <h2>Rock</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, dolore.</p>
                 <div class="cards__overlay">
-                    <p class="cards__overlay__text">Book in</p>
+                    <p class="cards__overlay__text">Show more</p>
                 </div>
             </div>
         </div>
     </main>
+    <section id="modal" class="modal none">
+        <div class="modal__display">
+        </div>
+        <button onclick="toggleModal()" class="modal__exit">X</button>
+    </section>
     <script src="./app.js"></script>
+    <script src="../hotels.js"></script>
 </body>
 </html>

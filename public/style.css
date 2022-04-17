@@ -10,7 +10,7 @@ main {
 }
 
 main h1 {
-  margin: 1rem;
+  margin: 2rem;
 }
 
 main .cards {
@@ -24,7 +24,7 @@ main .cards {
 main .cards__item {
   position: relative;
   width: 20rem;
-  background-color: grey;
+  background-color: #ddd;
   border-radius: 0.5rem;
   box-shadow: 1px 1px 0.5rem black;
 }
@@ -49,17 +49,16 @@ main .cards__overlay {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: red;
+  background-color: #ddd;
   border-radius: 0.5rem;
   overflow: hidden;
   width: 100%;
   height: 0px;
-  transition: 0.5s ease-in;
+  transition: 0.3s ease-in 0.3s;
 }
 
 main .cards__overlay__text {
   white-space: nowrap;
-  color: white;
   font-size: 20px;
   position: absolute;
   overflow: hidden;
@@ -67,4 +66,78 @@ main .cards__overlay__text {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__display {
+  position: absolute;
+  width: 50%;
+  min-height: 50%;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 0.5rem black;
+  left: 25%;
+  top: 25%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal__display__hotels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 45%;
+}
+
+.modal__display__hotels h1, .modal__display__hotels h2, .modal__display__hotels p, .modal__display__hotels ul {
+  padding-block: 1rem;
+  margin-left: 1rem;
+}
+
+.modal__display__hotels p {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.modal__display__hotels li {
+  list-style: none;
+}
+
+.modal__display__hotels button {
+  padding: 0.5rem;
+  width: 5rem;
+  margin: auto;
+}
+
+.modal__display__hotels div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.modal__display__image {
+  width: 45%;
+  box-shadow: 1px 1px 0.5rem black;
+}
+
+.modal__exit {
+  position: inherit;
+  left: 25%;
+  top: 25%;
+  padding: 0.5rem;
+  border-radius: 0.5rem 0;
+  border: none;
+  background-color: #fff;
+}
+
+.none {
+  display: none;
 }

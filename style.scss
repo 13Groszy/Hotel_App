@@ -8,7 +8,7 @@ main{
     margin:auto;
 
     h1{
-        margin:1rem;
+        margin:2rem;
     }
 
     .cards{
@@ -20,7 +20,7 @@ main{
         &__item{ 
             position: relative;
             width:20rem;
-            background-color: grey;
+            background-color: #ddd;
             border-radius: 0.5rem;
             box-shadow: 1px 1px 0.5rem black;
 
@@ -42,16 +42,15 @@ main{
             position: absolute;
             bottom:0;
             left:0;
-            background-color: red;
+            background-color: #ddd;
             border-radius: 0.5rem;
             overflow: hidden;
             width:100%;
             height: 0px;
-            transition: 0.5s ease-in;
+            transition: 0.3s ease-in 0.3s;
             
             &__text{
-                white-space: nowrap; 
-                color: white;
+                white-space: nowrap;
                 font-size: 20px;
                 position: absolute;
                 overflow: hidden;
@@ -63,4 +62,68 @@ main{
         }
     }
 
+}
+.modal{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+
+    &__display{
+        position: absolute;
+        width:50%;
+        min-height: 50%;
+        background-color: #fff;
+        border-radius: 0.5rem;
+        box-shadow: 1px 1px 0.5rem black;
+        left:25%;
+        top:25%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        &__hotels{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width:45%;
+            h1,h2,p,ul{
+                padding-block: 1rem;
+                margin-left: 1rem;
+            }
+            p{
+                width:80%;
+                margin-left: 10%;
+            }
+            li{
+                list-style: none;
+            }
+            button{
+                padding:0.5rem;
+                width:5rem;
+                margin:auto;
+            }
+            div{
+                display: flex;
+                justify-content: space-evenly;
+            }
+        }
+        &__image{
+            width:45%;
+            box-shadow: 1px 1px 0.5rem black;
+        }
+    }
+    &__exit{
+        position: inherit;
+        left:25%;
+        top:25%;
+        padding: 0.5rem;
+        border-radius: 0.5rem 0;
+        border:none;
+        background-color: #fff;
+    }
+}
+.none{
+    display: none;
 }
