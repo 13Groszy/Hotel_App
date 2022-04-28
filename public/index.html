@@ -9,14 +9,14 @@
 </head>
 <body>
     <main>
-        <button onclick="test()">Press Alert</button>
+        <button onclick="restoreDataBaseValues()">Restore Database Values</button>
         <h1>Choose the hotel</h1>
         <div class="cards">
             <div class="cards__item" id="firstHotel">
                 <img src="../src/firstHotel.jpeg"+ alt="First Hotel">
                 <h2>Mushroom</h2>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, inventore?</p>
-                <div class="cards__overlay">
+                <div id="0" class="cards__overlay">
                     <p class="cards__overlay__text">Show more</p>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                 <img src="../src/secondHotel.jpeg" alt="Second Hotel">
                 <h2>Flower</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
-                <div class="cards__overlay">
+                <div id="1" class="cards__overlay">
                     <p class="cards__overlay__text">Show more</p>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <img src="../src/thirdHotel.jpeg" alt="Third Hotel">
                 <h2>Sand</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, maiores.</p>
-                <div class="cards__overlay">
+                <div id="2" class="cards__overlay">
                     <p class="cards__overlay__text">Show more</p>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 <img src="../src/fourthHotel.jpeg" alt="Fourth Hotel">
                 <h2>Rock</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, dolore.</p>
-                <div class="cards__overlay">
+                <div id="3" class="cards__overlay">
                     <p class="cards__overlay__text">Show more</p>
                 </div>
             </div>
@@ -51,7 +51,9 @@
         </div>
         <button onclick="toggleModal()" class="modal__exit">X</button>
     </section>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="../firebase.js"></script>
     <script src="./app.js"></script>
-    <script src="../hotels.js"></script>
 </body>
 </html>

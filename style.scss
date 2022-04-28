@@ -1,3 +1,5 @@
+$breakpoint-large: 1024px;
+$breakpoint-small: 600px;
 *{
     margin:0;
     padding:0;
@@ -17,7 +19,7 @@ main{
         justify-content: center;
         flex-wrap: wrap;
         gap:4rem;
-        &__item{ 
+        &__item{
             position: relative;
             width:20rem;
             background-color: #ddd;
@@ -35,7 +37,7 @@ main{
             p{
                 width:75%;
                 margin: auto;
-                margin-top:1rem;
+                margin-block:1rem;
             }
         }
         &__overlay{
@@ -64,7 +66,7 @@ main{
 
 }
 .modal{
-    position: absolute;
+    position: fixed;
     top:0;
     left:0;
     width: 100%;
@@ -83,12 +85,27 @@ main{
         display: flex;
         justify-content: space-around;
         align-items: center;
+        @media (max-width: $breakpoint-large) {
+            flex-direction: column;
+            top:4%;
+            width:80%;
+            left:10%;
+        }
         &__hotels{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         width:45%;
-            h1,h2,p,ul{
+        @media (max-width: $breakpoint-large) {
+            width:60%;
+            h1{
+                margin-top:1rem;
+            }
+        } 
+        @media (max-width: $breakpoint-small) {
+        width:80%;
+        }
+            h1,h2,p{
                 padding-block: 1rem;
                 margin-left: 1rem;
             }
@@ -103,15 +120,36 @@ main{
                 padding:0.5rem;
                 width:5rem;
                 margin:auto;
+                margin-block: 1rem;
             }
             div{
                 display: flex;
-                justify-content: space-evenly;
+                justify-content: space-between;
+
+                .input_list li{
+                    width:11rem;
+                    text-align: right;
+                    @media (max-width: $breakpoint-small) {
+                        width:8rem;
+                    }
+                    input{
+                        @media (max-width: $breakpoint-small) {
+                        width:5rem;
+                        }
+                    }
+                }
             }
         }
         &__image{
             width:45%;
             box-shadow: 1px 1px 0.5rem black;
+            @media (max-width: $breakpoint-large) {
+             width:50%; 
+             margin-bottom: 1rem;
+            }
+            @media (max-width: $breakpoint-small) {
+               width:80%;
+            }
         }
     }
     &__exit{
@@ -122,6 +160,10 @@ main{
         border-radius: 0.5rem 0;
         border:none;
         background-color: #fff;
+        @media (max-width: $breakpoint-large) {
+            top:4%;
+            left:10%;
+        }
     }
 }
 .none{
