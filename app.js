@@ -117,16 +117,32 @@ let reserveBtn = () => {
     });
     //Update on every reservation click
     displayInfo()
+    updateDataBaseValues(selectors.hotelNr)
 }
 //to never runout of 'available days' you can reset database to oryginal
 let restoreDataBaseValues = () =>{
-    let allDB = [1,2,3,4]
-    allDB.forEach(val =>{
-        db.collection("hotels").doc(`${val}`).update({
+    let promiseToRestore = new Promise ((resolve, reject) =>{
+        let allDB = [1,2,3,4]
+            allDB.forEach(val =>{
+                db.collection("hotels").doc(`${val}`).update({
             "availability.may": 31,
             "availability.june": 30,
             "availability.july": 31,
             "availability.august": 31
         });
+    })
+    })
+    promiseToRestore
+    .then(getHotels())
+    .catch(err => console.log(err))
+}
+let updateDataBaseValues = (hotelNumber) =>{
+    let valToConvert = hotelNumber;
+    valToConvert++
+    db.collection("hotels").doc(`${valToConvert}`).update({
+            "availability.may": selectors.clicked.availability.may,
+            "availability.june": selectors.clicked.availability.june,
+            "availability.july": selectors.clicked.availability.july,
+            "availability.august": selectors.clicked.availability.august
     })
 }

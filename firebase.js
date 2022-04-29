@@ -1,8 +1,5 @@
-require('dotenv').config();
-
-
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
+  apiKey: "AIzaSyB5mNQ0P9tNXV28yNHQFBpFG4KMBoD-IHA",
   authDomain: "hotel-c1d8b.firebaseapp.com",
   projectId: "hotel-c1d8b",
   storageBucket: "hotel-c1d8b.appspot.com",
