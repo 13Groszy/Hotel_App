@@ -84,17 +84,34 @@ var reserveBtn = function reserveBtn() {
   }); //Update on every reservation click
 
   displayInfo();
+  updateDataBaseValues(selectors.hotelNr);
 }; //to never runout of 'available days' you can reset database to oryginal
 
 
 var restoreDataBaseValues = function restoreDataBaseValues() {
-  var allDB = [1, 2, 3, 4];
-  allDB.forEach(function (val) {
-    db.collection("hotels").doc("".concat(val)).update({
-      "availability.may": 31,
-      "availability.june": 30,
-      "availability.july": 31,
-      "availability.august": 31
+  var promiseToRestore = new Promise(function (resolve, reject) {
+    var allDB = [1, 2, 3, 4];
+    allDB.forEach(function (val) {
+      db.collection("hotels").doc("".concat(val)).update({
+        "availability.may": 31,
+        "availability.june": 30,
+        "availability.july": 31,
+        "availability.august": 31
+      });
     });
+  });
+  promiseToRestore.then(getHotels()).catch(function (err) {
+    return console.log(err);
+  });
+};
+
+var updateDataBaseValues = function updateDataBaseValues(hotelNumber) {
+  var valToConvert = hotelNumber;
+  valToConvert++;
+  db.collection("hotels").doc("".concat(valToConvert)).update({
+    "availability.may": selectors.clicked.availability.may,
+    "availability.june": selectors.clicked.availability.june,
+    "availability.july": selectors.clicked.availability.july,
+    "availability.august": selectors.clicked.availability.august
   });
 };

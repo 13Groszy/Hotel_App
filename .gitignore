@@ -1,5 +1,4 @@
-.scss
+.css
 node_modules
 .env*
 !.env.project
-public/app.js
